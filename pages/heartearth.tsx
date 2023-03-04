@@ -2,9 +2,8 @@ import Head from "next/head"
 import Image from "next/image"
 import { Inter } from "next/font/google"
 import styles from "@/styles/Home.module.css"
-import Header from "../components/Header.tsx"
-//import ManualHeader from "../components/ManualHeader"
-import HeartIt from "../components/HeartIt"
+import Header from "../components/Header"
+import HeartEarth from "../components/HeartEarth"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -20,9 +19,8 @@ export default function Home() {
                 />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            {/*<ManualHeader />*/}
             <Header />
-            <HeartIt />
+            <HeartEarth />
         </>
     )
 }
