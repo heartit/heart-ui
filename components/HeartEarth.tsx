@@ -1,5 +1,10 @@
 import { useWeb3Contract, useMoralis } from "react-moralis"
-import { contractAddresses, earthAbi } from "../constants"
+import {
+    contractAddresses,
+    abi,
+    earthAbi,
+    earthContractAddresses,
+} from "../constants"
 import { useNotification } from "web3uikit"
 import { BigNumber, ethers, ContractTransaction } from "ethers"
 import { useEffect, useState } from "react"
@@ -8,8 +13,9 @@ interface contractAddressesInterface {
     [key: string]: string[]
 }
 
-export default function HeartIt() {
-    const addresses: contractAddressesInterface = contractAddresses
+export default function HeartEarth() {
+    const addresses: contractAddressesInterface = earthContractAddresses
+    console.log("addresses", addresses)
     const { chainId: chainIdHex, isWeb3Enabled } = useMoralis()
     const chainId: string = parseInt(chainIdHex!).toString()
     const heartEarthAddress =
@@ -26,9 +32,10 @@ export default function HeartIt() {
 
     async function updateUI() {
         console.log("[W8] Updating UI...")
-        console.log(earthAbi)
         const leaveItCalled = await leaveIt()
-        //console.log(leaveItCalled)
+        console.log("called", leaveItCalled)
+        setLeaveItStatus(leaveItCalled)
+        console.log(leaveItStatus)
     }
 
     useEffect(() => {
@@ -37,5 +44,5 @@ export default function HeartIt() {
         }
     }, [isWeb3Enabled])
 
-    return <div>{leaveItStatus}</div>
+    return <div>{leaveItStatus.toString()}hi</div>
 }

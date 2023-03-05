@@ -91,9 +91,9 @@ export default function HeartIt() {
     }
 
     return (
-        <div className="flex flex-row items-center justify-evenly text-cyan-800">
+        <div className="flex flex-row items-center justify-evenly text-gray-700">
             {heartAddress ? (
-                <div className="bg-[#E0D98C] grid grid-cols-2 gap-4 rounded-md p-5 m-5">
+                <div className="bg-[#31C6D4] grid grid-cols-2 gap-4 rounded-md p-5 m-5">
                     <div className="col-span-2 text-xl font-bold">Heart It</div>
                     <input
                         type="text"
@@ -103,7 +103,7 @@ export default function HeartIt() {
                         required
                         onChange={(e) => setDataInput(e.target.value)}
                     />
-                    <div className="flex flex-col space-y-2 p-7 w-80 bg-[#A8D1D1] rounded-md">
+                    <div className="flex flex-col space-y-2 p-7 w-80 bg-[#00FFD1] rounded-md">
                         <div className="self-center font-semibold">Good</div>
                         <input
                             id="good-input"
@@ -152,7 +152,7 @@ export default function HeartIt() {
                             </li>
                         </ul>
                     </div>
-                    <div className="flex flex-col space-y-2 p-7 w-80 bg-[#A8D1D1] rounded-md">
+                    <div className="flex flex-col space-y-2 p-7 w-80 bg-[#00FFD1] rounded-md">
                         <div className="self-center font-semibold">Bad</div>
                         <input
                             id="bad-input"
@@ -201,7 +201,7 @@ export default function HeartIt() {
                             </li>
                         </ul>
                     </div>
-                    <div className="flex flex-col space-y-2 p-7 w-80 bg-[#A8D1D1] rounded-md">
+                    <div className="flex flex-col space-y-2 p-7 w-80 bg-[#00FFD1] rounded-md">
                         <div className="self-center font-semibold">Happy</div>
                         <input
                             id="happy-input"
@@ -250,7 +250,7 @@ export default function HeartIt() {
                             </li>
                         </ul>
                     </div>
-                    <div className="flex flex-col space-y-2 p-7 w-80 bg-[#A8D1D1] rounded-md">
+                    <div className="flex flex-col space-y-2 p-7 w-80 bg-[#00FFD1] rounded-md">
                         <div className="self-center font-semibold">Sad</div>
                         <input
                             id="sad-input"
@@ -299,7 +299,7 @@ export default function HeartIt() {
                             </li>
                         </ul>
                     </div>
-                    <div className="flex flex-col space-y-2 p-7 w-80 bg-[#A8D1D1] rounded-md">
+                    <div className="flex flex-col space-y-2 p-7 w-80 bg-[#00FFD1] rounded-md">
                         <div className="self-center font-semibold">
                             Surprise
                         </div>
@@ -350,7 +350,7 @@ export default function HeartIt() {
                             </li>
                         </ul>
                     </div>
-                    <div className="flex flex-col space-y-2 p-7 w-80 bg-[#A8D1D1] rounded-md">
+                    <div className="flex flex-col space-y-2 p-7 w-80 bg-[#00FFD1] rounded-md">
                         <div className="self-center font-semibold">Fear</div>
                         <input
                             id="fear-input"
@@ -399,7 +399,7 @@ export default function HeartIt() {
                             </li>
                         </ul>
                     </div>
-                    <div className="flex flex-col space-y-2 p-7 w-80 bg-[#A8D1D1] rounded-md">
+                    <div className="flex flex-col space-y-2 p-7 w-80 bg-[#00FFD1] rounded-md">
                         <div className="self-center font-semibold">Anger</div>
                         <input
                             id="anger-input"
@@ -448,7 +448,7 @@ export default function HeartIt() {
                             </li>
                         </ul>
                     </div>
-                    <div className="flex flex-col space-y-2 p-7 w-80 bg-[#A8D1D1] rounded-md">
+                    <div className="flex flex-col space-y-2 p-7 w-80 bg-[#00FFD1] rounded-md">
                         <div className="self-center font-semibold">Disgust</div>
                         <input
                             id="disgust-input"
@@ -499,7 +499,7 @@ export default function HeartIt() {
                     </div>
                     <button
                         type="button"
-                        className="bg-[#C21010] text-white font-bold rounded-md px-4 py-2 m-2 mx-40 transition duration-500 ease select-none hover:bg-red-800 hover:outline-none focus:outline-none focus:shadow-outline col-span-2"
+                        className="bg-[#FF1E1E] text-white font-bold rounded-md px-4 py-2 m-2 mx-40 transition duration-500 ease select-none hover:bg-red-800 hover:outline-none focus:outline-none focus:shadow-outline col-span-2"
                         onClick={async () => {
                             await addBeat({
                                 onSuccess: (tx) =>
@@ -514,7 +514,7 @@ export default function HeartIt() {
                 <div>HeartAddress not found!</div>
             )}
             <div className="flex flex-col">
-                <div className="bg-[#E0D98C] rounded-md p-5 m-5">
+                <div className="bg-[#B4E4FF] rounded-md p-5 m-5">
                     <div className="font-semibold">Search the Heart!</div>
                     <div className="grid grid-cols-3 gap-4 items-center">
                         <input
@@ -527,14 +527,14 @@ export default function HeartIt() {
                         />
                         <button
                             type="button"
-                            className="bg-[#C21010] text-white font-bold rounded-md px-4 py-2 m-2  transition duration-500 ease select-none hover:bg-red-800 focus:outline-none focus:shadow-outline"
+                            className="bg-[#FF1E1E] text-white font-bold rounded-md px-4 py-2 m-2  transition duration-500 ease select-none hover:bg-red-800 focus:outline-none focus:shadow-outline"
                             onClick={async () => await getBeatsFromData()}
                         >
                             Search Heart!
                         </button>
                     </div>
                     {displayResults && (
-                        <div className="space-y-2 p-7 mt-2 bg-[#A8D1D1] rounded-md">
+                        <div className="space-y-2 p-7 mt-2 bg-[#00FFD1] rounded-md">
                             <div className="font-semibold">
                                 Number of Entries: {avgRhythm[8]}
                             </div>
@@ -552,9 +552,9 @@ export default function HeartIt() {
                         </div>
                     )}
                 </div>
-                <div className="bg-[#E0D98C] rounded-md p-5 m-5 content-center">
+                <div className="bg-[#B4E4FF] rounded-md p-5 m-5 content-center">
                     <div className="font-semibold">Heart History</div>
-                    <div className="overflow-y-scroll h-80 flex">
+                    <div className="overflow-y-scroll h-80  rounded-md bg-[#00FFD1]">
                         <table className="p-1 rounded-md border-separate border-spacing-2 ">
                             <thead>
                                 <tr>
