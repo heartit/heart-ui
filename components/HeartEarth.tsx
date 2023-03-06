@@ -167,94 +167,111 @@ export default function HeartEarth() {
 
     return (
         <div className="grid grid-cols-2 items-center justify-evenly text-gray-700">
-            <div className="bg-[#31C6D4] rounded-md p-5 m-5">
-                <div className="text-xl">Activate HeartEarth</div>
-                <p>
-                    1. Check to see whether "tree" and "fuel" are <b>Good</b> or{" "}
-                    <b>Bad</b>:
-                </p>
-                <button
-                    className="bg-[#FF1E1E] text-white font-bold rounded-md px-4 py-2 m-2 mx-40 transition duration-500 ease select-none hover:bg-red-800 hover:outline-none focus:outline-none focus:shadow-outline col-span-2"
-                    onClick={async () => {
-                        await getBeatsFromData()
-                    }}
-                >
-                    Get Tree and Fuel from Heart
-                </button>
-                {displayResults && (
-                    <div className="grid grid-cols-2 gap-4">
-                        <div className="space-y-2 p-7 mt-2 bg-[#00FFD1] rounded-md">
-                            <div>
-                                <div className="font-semibold">Tree</div>
-                                Number of Entries: {treeAvgRhythm[8]}
+            <div className="flex flex-col bg-[#31C6D4] rounded-md p-5 m-5 place-items-center space-y-3">
+                <div className="text-xl font-bold text-white self-start">
+                    HeartEarth
+                </div>
+                <div className="flex flex-col place-items-center bg-[#00FFD1] rounded-md w-[75%] p-7 space-y-2 ">
+                    <p className="self-start">
+                        1. Check to see whether "tree" and "fuel" are{" "}
+                        <b>Good</b> or <b>Bad</b>:
+                    </p>
+                    <button
+                        className=" bg-[#FF1E1E] text-white font-bold rounded-md w-fit px-4 py-2 m-2  transition duration-500 ease select-none hover:bg-red-800 hover:outline-none focus:outline-none focus:shadow-outline "
+                        onClick={async () => {
+                            await getBeatsFromData()
+                        }}
+                    >
+                        Get Tree and Fuel from Heart
+                    </button>
+                    {displayResults && (
+                        <div className="grid grid-cols-2 gap-4">
+                            <div className="space-y-2 p-7 mt-2 bg-[#13E3BE] rounded-md">
+                                <div>
+                                    <div className="font-semibold">Tree</div>
+                                    Number of Entries: {treeAvgRhythm[8]}
+                                </div>
+                                <div className="grid grid-cols-2 gap-3">
+                                    <div>
+                                        Good: {treeAvgRhythm[0].toFixed(2)}
+                                    </div>
+                                    <div>
+                                        Bad: {treeAvgRhythm[1].toFixed(2)}
+                                    </div>
+                                </div>
                             </div>
-                            <div className="grid grid-cols-2 gap-3">
-                                <div>Good: {treeAvgRhythm[0].toFixed(2)}</div>
-                                <div>Bad: {treeAvgRhythm[1].toFixed(2)}</div>
+                            <div className="space-y-2 p-7 mt-2 bg-[#13E3BE] rounded-md">
+                                <div>
+                                    <div className="font-semibold">Fuel</div>
+                                    Number of Entries: {fuelAvgRhythm[8]}
+                                </div>
+                                <div className="grid grid-cols-2 gap-3">
+                                    <div>
+                                        Good: {fuelAvgRhythm[0].toFixed(2)}
+                                    </div>
+                                    <div>
+                                        Bad: {fuelAvgRhythm[1].toFixed(2)}
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <div className="space-y-2 p-7 mt-2 bg-[#00FFD1] rounded-md">
-                            <div>
-                                <div className="font-semibold">Fuel</div>
-                                Number of Entries: {fuelAvgRhythm[8]}
+                    )}
+                </div>
+                <div className="flex flex-col place-items-center bg-[#00FFD1] rounded-md w-[75%] p-7 space-y-2 ">
+                    <p>
+                        2. Get the <b>leaveIt</b> result for "tree" and "fuel"
+                        from the HeartEarth contract and apply the result to the
+                        emojis (real-world sample):
+                    </p>
+                    <button
+                        className="bg-[#FF1E1E] text-white font-bold rounded-md px-4 py-2 m-2 mx-40 transition duration-500 ease select-none hover:bg-red-800 hover:outline-none focus:outline-none focus:shadow-outline col-span-2"
+                        onClick={async () => await callLeaveIt()}
+                    >
+                        Get HeartEarth Result and Apply
+                    </button>
+                    {leaveItDisplayResults && (
+                        <div className="grid grid-cols-2 gap-4">
+                            <div className="space-y-2 p-7 mt-2 bg-[#13E3BE] rounded-md">
+                                <div>
+                                    <div className="font-semibold">Tree</div>
+                                </div>
+                                <div>{treeLeaveItStatus.toString()}</div>
                             </div>
-                            <div className="grid grid-cols-2 gap-3">
-                                <div>Good: {fuelAvgRhythm[0].toFixed(2)}</div>
-                                <div>Bad: {fuelAvgRhythm[1].toFixed(2)}</div>
+                            <div className="space-y-2 p-7 mt-2 bg-[#13E3BE] rounded-md">
+                                <div>
+                                    <div className="font-semibold">Fuel</div>
+                                </div>
+                                <div>{fuelLeaveItStatus.toString()}</div>
                             </div>
                         </div>
-                    </div>
-                )}
-                <p>
-                    2. Get the <b>leaveIt</b> result for "tree" and "fuel" from
-                    the HeartEarth contract and apply the result to the emojis
-                    (real-world sample):
-                </p>
-                <button
-                    className="bg-[#FF1E1E] text-white font-bold rounded-md px-4 py-2 m-2 mx-40 transition duration-500 ease select-none hover:bg-red-800 hover:outline-none focus:outline-none focus:shadow-outline col-span-2"
-                    onClick={async () => await callLeaveIt()}
-                >
-                    Get HeartEarth Result and Apply
-                </button>
-                {leaveItDisplayResults && (
-                    <div className="grid grid-cols-2 gap-4">
-                        <div className="space-y-2 p-7 mt-2 bg-[#00FFD1] rounded-md">
-                            <div>
-                                <div className="font-semibold">Tree</div>
-                            </div>
-                            <div>{treeLeaveItStatus.toString()}</div>
-                        </div>
-                        <div className="space-y-2 p-7 mt-2 bg-[#00FFD1] rounded-md">
-                            <div>
-                                <div className="font-semibold">Fuel</div>
-                            </div>
-                            <div>{fuelLeaveItStatus.toString()}</div>
-                        </div>
-                    </div>
-                )}
-                <p>
-                    3. Assuming the logic of the HeartEarth is to clear the air,
-                    reward the contributors who had participated positively in
-                    Heart contract, hearting "tree" as <b>Good</b>:
-                </p>
+                    )}
+                </div>
+                <div className="flex flex-col place-items-center bg-[#00FFD1] rounded-md w-[75%] p-7 space-y-2 ">
+                    <p>
+                        3. Assuming the logic of the HeartEarth is to clear the
+                        air, reward the contributors who had participated
+                        positively in Heart contract, hearting "tree" as{" "}
+                        <b>Good</b> or "fuel" as <b>Bad</b>:
+                    </p>
 
-                <input
-                    type="text"
-                    id="rewardee-amnt-input"
-                    className="bg-[#0F3460] text-cyan-200 text-m rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  col-span-2 "
-                    placeholder="How much ETH to pay the rewardees?"
-                    required
-                    onChange={(e) => {
-                        if (!isNaN(e.target.value))
-                            setRewardeeAmntInput(e.target.value)
-                    }}
-                />
-                <button
-                    className="bg-[#FF1E1E] text-white font-bold rounded-md px-4 py-2 m-2 mx-40 transition duration-500 ease select-none hover:bg-red-800 hover:outline-none focus:outline-none focus:shadow-outline col-span-2"
-                    onClick={async () => await reward()}
-                >
-                    Reward Positive Hearters
-                </button>
+                    <input
+                        type="text"
+                        id="rewardee-amnt-input"
+                        className="bg-[#0F3460] text-cyan-200 w-[60%] text-m rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  col-span-2 "
+                        placeholder="How much ETH to pay the rewardees?"
+                        required
+                        onChange={(e) => {
+                            if (!isNaN(e.target.value))
+                                setRewardeeAmntInput(e.target.value)
+                        }}
+                    />
+                    <button
+                        className="bg-[#FF1E1E] text-white font-bold rounded-md px-4 py-2 m-2 mx-40 transition duration-500 ease select-none hover:bg-red-800 hover:outline-none focus:outline-none focus:shadow-outline col-span-2"
+                        onClick={async () => await reward()}
+                    >
+                        Reward Effective Hearters
+                    </button>
+                </div>
             </div>
             <div className="bg-[#B4E4FF] rounded-md p-5 m-5">
                 <div className="text-xl">HeartEarth</div>

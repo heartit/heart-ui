@@ -94,7 +94,9 @@ export default function HeartIt() {
         <div className="flex flex-row items-center justify-evenly text-gray-700">
             {heartAddress ? (
                 <div className="bg-[#31C6D4] grid grid-cols-2 gap-4 rounded-md p-5 m-5">
-                    <div className="col-span-2 text-xl font-bold">Heart It</div>
+                    <div className="col-span-2 text-xl font-bold text-white">
+                        Heart It
+                    </div>
                     <input
                         type="text"
                         id="data-input"
