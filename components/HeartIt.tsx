@@ -64,7 +64,7 @@ export default function HeartIt() {
     }, [isWeb3Enabled])
 
     async function getBeatsFromData() {
-        const beats = await getBeats(getBeatsData)
+        const beats = await getBeats()
         let rhythm = [0, 0, 0, 0, 0, 0, 0, 0]
         for (let i = 0; i < beats.length; i++) {
             let iter = 0
