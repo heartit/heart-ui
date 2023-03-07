@@ -274,9 +274,8 @@ export default function HeartEarth() {
                 </div>
             </div>
             <div className="bg-[#B4E4FF] rounded-md p-5 m-5">
-                <div className="text-xl">HeartEarth</div>
                 <div className="font-bold">
-                    A Sample Usage of HeartIt Showcase
+                    A showcase sample of HeartIt application
                 </div>
                 {weatherCondition == "normal" && (
                     <div className="flex flex-col place-items-center bg-gray-500 rounded-md p-5 m-5 text-5xl">

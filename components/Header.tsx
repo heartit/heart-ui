@@ -8,17 +8,33 @@ export default function Header() {
                 <Link className="text-2xl font-bold text-white mx-5" href="/">
                     <span className="text-4xl">♥</span>it
                 </Link>
-                <Link
-                    href="/heartearth"
-                    className="border border-white font-bold rounded-md px-4 py-2  transition duration-500 ease select-none hover:bg-red-800 hover:outline-none focus:outline-none focus:shadow-outline "
-                >
-                    <div className="text-white flow flow-col">
-                        <div>heart</div>
-                        <div className="mt-[-13px]">
-                            <span className="invisible">h</span>earth
+                <div className="group relative flex justify-center">
+                    <Link
+                        href="/heartearth"
+                        className="border border-white font-bold rounded-md px-4 py-2  transition duration-500 ease select-none hover:bg-red-800 hover:outline-none focus:outline-none focus:shadow-outline "
+                    >
+                        <div className="text-white flow flow-col text-sm">
+                            <div>HEART</div>
+                            <div className="mt-[-9px]">
+                                <span className="invisible">H</span>EARTH
+                            </div>
                         </div>
+                    </Link>
+                    <div className="w-[120px] absolute transition inline-block px-3 py-2 text-sm font-medium text-white bg-[#3EC70B] rounded-lg shadow-sm top-14 tooltip scale-0 group-hover:scale-100">
+                        A showcase of HeartIt application
                     </div>
-                </Link>
+                </div>
+                <div className="group relative flex justify-center mx-5">
+                    <Link
+                        href="/heartearth"
+                        className="flex place-items-center text-sm text-white border border-white font-bold rounded-md px-4 py-2  transition duration-500 ease select-none hover:bg-red-800 hover:outline-none focus:outline-none focus:shadow-outline"
+                    >
+                        BLOG
+                    </Link>
+                    <div className="w-[120px] absolute transition inline-block px-3 py-2 text-sm font-medium text-white bg-[#3EC70B] rounded-lg shadow-sm top-14 tooltip scale-0 group-hover:scale-100">
+                        Where the Heart is, and will be
+                    </div>
+                </div>
             </div>
             <ConnectButton moralisAuth={false} />
         </div>
