@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 
 interface contractAddressesInterface {
     [key: string]: string[]
@@ -10,7 +11,7 @@ export default function Blog() {
             <div className="bg-[#00FFD1] text-[#0F4C75] rounded-md p-5 m-5 w-1/2">
                 <div className="bg-[#0000001c] rounded-md p-3">
                     <h1 className="text-2xl text-[#FF1E1E] font-bold">
-                        An Intro to the Heart
+                        An Intro to the HeartIt
                     </h1>
                     <h2 className="text-sm text-[#FF1E1E] font-bold">
                         March 7, 2023
@@ -20,6 +21,15 @@ export default function Blog() {
                     <p className="pt-2">
                         The digital world has too much of a brain, but not
                         enough of a heart.
+                    </p>
+
+                    <div className="pt-5 text-xl font-bold">Overview</div>
+                    <p className="pt-2">
+                        HeartIt is all about connecting the digital world to the
+                        human emotions and consequently benefitting participants
+                        financially (if they apply accurate emotions) and
+                        morally (by driving other companies to achieve what
+                        people feel is good.)
                     </p>
 
                     <p className="pt-5 text-xl font-bold">The HeartIt Goal</p>
@@ -94,23 +104,150 @@ export default function Blog() {
                         (9/9) or the word "fuel" as Bad (9/9).
                     </p>
                 </div>
-                <div className="pt-5 text-xl font-bold">Future HeartIt</div>
+                <div className="pt-5 text-xl font-bold">HeartIt Plans</div>
                 <p className="pt-2">HeartIt will improve thusly:</p>
                 <ul className="list-disc pt-2 list-inside">
                     <li className="font-bold pt-3">Heart.sol Smart Contract</li>
                     <ol className="list-decimal list-inside space-y-1 pl-5 mt-2">
-                        <li></li>
-                        <li></li>
+                        <li className="italic">
+                            Deeper and more precise emotion-detection tools
+                        </li>
+                        <p className="pl-5">
+                            A more detailed detection will replace the currently
+                            basic one, with an even more simple interface, for a
+                            higher accuracy and broader range of relative data.
+                        </p>
+                        <Image
+                            src="/emotions-wheel.png"
+                            alt="Emotion Wheel"
+                            width={300}
+                            height={300}
+                            className="mx-auto"
+                        />
+                        <li className="italic">
+                            Emotion detection using wearables and smartphones
+                        </li>
+                        <p className="pl-5">
+                            Smartphones and wearables can be used in various
+                            ways to gather even more precise data from the
+                            users, provided they agree to do so. There are a few
+                            researches that demonstrate how such methods can
+                            lead to significant results in detecting and
+                            validating emotions.
+                        </p>
+                        <p className="pl-5">
+                            As an example{" "}
+                            <a
+                                href="https://arxiv.org/abs/1806.08518"
+                                className="underline"
+                                target="_blank"
+                            >
+                                Emotion-Recognition Using Smart Watch Sensor
+                                Data
+                            </a>{" "}
+                            is a research based on scraping emotions from
+                            smartwatches, focusing on the walking patterns of
+                            the wearer.
+                        </p>
+                        <p className="pl-5">
+                            Here is another research article focusing on reading
+                            different signals to recognize emotions using smart
+                            wearables:{" "}
+                            <a
+                                href="https://arxiv.org/abs/2207.14640"
+                                className="underline"
+                                target="_blank"
+                            >
+                                Emotion Recognition based on Sensor data
+                                analysis using LightGBM
+                            </a>
+                        </p>
+                        <Image
+                            src="/emotion-sensor.png"
+                            alt="Emotion Sensor"
+                            width={400}
+                            height={400}
+                            className="mx-auto"
+                        />
+                        <li className="italic">
+                            Accepting any piece of digital data as input
+                        </li>
+                        <p className="pl-5">
+                            We are starting by just text as input, but HeartIt
+                            will be able to accept any digital data including
+                            pictures, audio, video, etc. This will eventually
+                            lead to HeartIt becoming the emotional source of any
+                            digital data.
+                        </p>
                     </ol>
                     <li className="font-bold pt-3">
                         Application Smart Contracts
                     </li>
                     <ol className="list-decimal list-inside space-y-1 pl-5 mt-2">
-                        <li></li>
+                        <p>
+                            In this section the applications of near-future are
+                            presented, on which our team is currently focused
+                            on. These apps are based on HeartIt and will be
+                            open-source, decentralized, and trustless, as the
+                            HeartIt core itself. They will also be highly
+                            profitable for those who take part in Hearting It,
+                            money-wise; it will help HeartIt get a kickstart and
+                            move strongly towards an ecosystem where emotions as
+                            well as profits are exceptionally valued.
+                        </p>
+                        <p className="pt-2">
+                            It is needless to say that there are a lot of
+                            applications for accurate emotion detection results.
+                            Use cases include fields such as video gaming,
+                            medical diagnosis, education, employee safety,
+                            patient care, car safety, autonomous cars, fraud
+                            detection, recruiting, connected home, public
+                            service, and retails, to name a few.
+                        </p>
+                        <p className="pt-2">
+                            The following are native HeartIt applications on
+                            which the team is currently focused.
+                        </p>
+                        <li className="italic pt-2">Crypto Exchange</li>
+                        <p className="pl-5">
+                            The smart contract associated with this exchange
+                            will use the info (Heartbeats) gathered by the
+                            HeartIt contract to predict the market. It will
+                            utilize machine learning along with data mining, and
+                            when it predicts the market and makes profit, it
+                            will autonomously share the profit among the
+                            accurate HeartIt participants.
+                        </p>
+                        <li className="italic pt-2">Marketplace</li>
+                        <p className="pl-5">
+                            A decentralized marketplace where digital assets
+                            (like NFTs) will be valued by HeartIt data, and once
+                            their sold, the accurate contributors to the
+                            relative data will be rewarded from the profit that
+                            asset makes.
+                        </p>
                     </ol>
                     <li className="font-bold pt-3">User Interface (UI)</li>
                     <ol className="list-decimal list-inside space-y-1 pl-5 mt-2">
-                        <li></li>
+                        <p className="pt-2">
+                            The UI will keep its simplicity and neon colors.
+                            &#9786; The following are the main focus of what is
+                            coming up in UI and UX.
+                        </p>
+                        <li className="italic pt-2">
+                            Responsive to different screen sizes
+                        </li>
+                        <li className="italic pt-2">
+                            More user-friendly emotion selector for even more
+                            detailed emotional terms
+                        </li>
+                        <li className="italic pt-2">Native wallet connector</li>
+                        <li className="italic pt-2">
+                            More details on searching data from the Heart
+                        </li>
+                        <li className="italic pt-2">
+                            More informative Heart History, Heart search results
+                        </li>
                     </ol>
                 </ul>
             </div>
