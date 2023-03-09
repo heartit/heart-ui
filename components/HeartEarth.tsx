@@ -84,67 +84,56 @@ export default function HeartEarth() {
     })
 
     async function getBeatsFromData(_data) {
-        const treeBeats: Array<{
-            data: string
-            addr: string
-            rhythm: number
-            goalRhythm: number
-        }> = await getTreeBeats()
-        const fuelBeats: Array<{
-            data: string
-            addr: string
-            rhythm: number
-            goalRhythm: number
-        }> = await getFuelBeats()
+        const treeBeats = await getTreeBeats()
+        const fuelBeats = await getFuelBeats()
 
         let rhythm = [0, 0, 0, 0, 0, 0, 0, 0]
-        for (let i = 0; i < treeBeats.length; i++) {
-            let iter = 0
-            const initIndex = 8 - treeBeats[i].rhythm.toString().length
-            for (let j = initIndex; j < rhythm.length; j++) {
-                rhythm[j] += parseInt(treeBeats[i].rhythm.toString()[iter++])
+
+        console.log("type of treebeats", typeof treeBeats)
+
+        if (typeof treeBeats == "object") {
+            for (let i = 0; i < treeBeats.length; i++) {
+                let iter = 0
+                const initIndex = 8 - treeBeats[i].rhythm.toString().length
+                for (let j = initIndex; j < rhythm.length; j++) {
+                    rhythm[j] += parseInt(
+                        treeBeats[i].rhythm.toString()[iter++]
+                    )
+                }
+                if (treeBeats[i].rhythm.toString() == "90000000")
+                    rewardeeBeats.push({
+                        data: treeBeats[i].data,
+                        addr: treeBeats[i].addr,
+                        rhythm: parseInt(treeBeats[i].rhythm.toString()),
+                        goalRhythm: 90000000,
+                    })
             }
-            if (treeBeats[i].rhythm.toString() == "90000000")
-                rewardeeBeats.push({
-                    data: treeBeats[i].data,
-                    addr: treeBeats[i].addr,
-                    rhythm: parseInt(treeBeats[i].rhythm.toString()),
-                    goalRhythm: 90000000,
-                })
         }
 
-        console.log(rewardeeBeats)
-
-        /*[
-        {
-            data: "tree",
-            addr: "0x70997970C51812dc3A010C7d01b50e0d17dc79C8",
-            rhythm: 90000000,
-            goalRhythm: 90000000,
-        },
-        ]*/
         const treeAvg: number = []
         for (let k = 0; k < rhythm.length; k++) {
             treeAvg.push(rhythm[k] / treeBeats.length)
         }
 
         let fuelRhythm = [0, 0, 0, 0, 0, 0, 0, 0]
-        for (let i = 0; i < fuelBeats.length; i++) {
-            let iter = 0
-            const initIndex = 8 - fuelBeats[i].rhythm.toString().length
-            for (let j = initIndex; j < fuelRhythm.length; j++) {
-                fuelRhythm[j] += parseInt(
-                    fuelBeats[i].rhythm.toString()[iter++]
-                )
+        if (typeof treeBeats == "object") {
+            for (let i = 0; i < fuelBeats.length; i++) {
+                let iter = 0
+                const initIndex = 8 - fuelBeats[i].rhythm.toString().length
+                for (let j = initIndex; j < fuelRhythm.length; j++) {
+                    fuelRhythm[j] += parseInt(
+                        fuelBeats[i].rhythm.toString()[iter++]
+                    )
+                }
+                console.log(fuelBeats[i].rhythm.toString(), "9000000")
+                if (fuelBeats[i].rhythm.toString() == "9000000")
+                    rewardeeBeats.push({
+                        data: fuelBeats[i].data,
+                        addr: fuelBeats[i].addr,
+                        rhythm: parseInt(fuelBeats[i].rhythm.toString()),
+                        goalRhythm: 9000000,
+                    })
             }
-            console.log(fuelBeats[i].rhythm.toString(), "9000000")
-            if (fuelBeats[i].rhythm.toString() == "9000000")
-                rewardeeBeats.push({
-                    data: fuelBeats[i].data,
-                    addr: fuelBeats[i].addr,
-                    rhythm: parseInt(fuelBeats[i].rhythm.toString()),
-                    goalRhythm: 9000000,
-                })
         }
         console.log("rewardee beats", rewardeeBeats)
 
