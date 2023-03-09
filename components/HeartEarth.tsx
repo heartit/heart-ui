@@ -87,8 +87,10 @@ export default function HeartEarth() {
         const treeBeats = await getTreeBeats()
         const fuelBeats = await getFuelBeats()
 
-        const treeBeatsLength = treeBeats.length | 0
-        const fuelBeatsLength = fuelBeats.length | 0
+        const treeBeatsLength =
+            typeof treeBeats == "object" ? treeBeats.length : 0
+        const fuelBeatsLength =
+            typeof fuelBeats == "object" ? fuelBeats.length : 0
 
         let rhythm = [0, 0, 0, 0, 0, 0, 0, 0]
 
