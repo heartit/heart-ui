@@ -84,8 +84,8 @@ export default function HeartEarth() {
     })
 
     async function getBeatsFromData(_data) {
-        const treeBeats = await getTreeBeats()
-        const fuelBeats = await getFuelBeats()
+        const treeBeats: any[] = await getTreeBeats()
+        const fuelBeats: any[] = await getFuelBeats()
 
         let rhythm = [0, 0, 0, 0, 0, 0, 0, 0]
 
