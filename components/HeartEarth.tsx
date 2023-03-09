@@ -80,7 +80,7 @@ export default function HeartEarth() {
         contractAddress: heartAddress!,
         functionName: "reward",
         params: { _beats: rewardeeBeats },
-        msgValue: ethers.utils.parseUnits(rewardeeAmntInput),
+        msgValue: ethers.utils.parseUnits(rewardeeAmntInput).toString(),
     })
 
     async function getBeatsFromData(_data) {
