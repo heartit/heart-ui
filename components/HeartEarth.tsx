@@ -91,7 +91,7 @@ export default function HeartEarth() {
 
         console.log("type of treebeats", typeof treeBeats)
 
-        if (typeof treeBeats == "object") {
+        if (typeof treeBeats == "object" && treeBeats != null) {
             for (let i = 0; i < treeBeats.length; i++) {
                 let iter = 0
                 const initIndex = 8 - treeBeats[i].rhythm.toString().length
@@ -116,7 +116,7 @@ export default function HeartEarth() {
         }
 
         let fuelRhythm = [0, 0, 0, 0, 0, 0, 0, 0]
-        if (typeof treeBeats == "object") {
+        if (typeof fuelBeats == "object" && fuelBeats != null) {
             for (let i = 0; i < fuelBeats.length; i++) {
                 let iter = 0
                 const initIndex = 8 - fuelBeats[i].rhythm.toString().length
