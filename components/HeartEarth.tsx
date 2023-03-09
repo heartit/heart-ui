@@ -33,7 +33,7 @@ export default function HeartEarth() {
     const heartAddress =
         chainId in heartAddresses ? heartAddresses[chainId][0] : null
 
-    const [treeLeaveItStatus, setTreeLeaveItStatus] = useState(false)
+    const [treeLeaveItStatus, setTreeLeaveItStatus] = useState<boolean>(false)
     const [fuelLeaveItStatus, setFuelLeaveItStatus] = useState(false)
     const [getBeatsData, setGetBeatsData] = useState("")
     const [treeAvgRhythm, setTreeAvgRhythm] = useState([
@@ -87,10 +87,8 @@ export default function HeartEarth() {
         const treeBeats = await getTreeBeats()
         const fuelBeats = await getFuelBeats()
 
-        const treeBeatsLength =
-            typeof treeBeats == "object" ? treeBeats.length : 0
-        const fuelBeatsLength =
-            typeof fuelBeats == "object" ? fuelBeats.length : 0
+        const treeBeatsLength = Object.values(treeBeats).length
+        const fuelBeatsLength = Object.values(fuelBeats).length
 
         let rhythm = [0, 0, 0, 0, 0, 0, 0, 0]
 
@@ -115,9 +113,9 @@ export default function HeartEarth() {
             }
         }
 
-        const treeAvg: number = []
+        const treeAvg = []
         for (let k = 0; k < rhythm.length; k++) {
-            treeAvg.push(rhythm[k] / treeBeats.length)
+            treeAvg.push(rhythm[k] / treeBeatsLength)
         }
 
         let fuelRhythm = [0, 0, 0, 0, 0, 0, 0, 0]
@@ -142,13 +140,13 @@ export default function HeartEarth() {
         }
         console.log("rewardee beats", rewardeeBeats)
 
-        const fuelAvg: number = []
+        const fuelAvg = []
         for (let k = 0; k < fuelRhythm.length; k++) {
-            fuelAvg.push(fuelRhythm[k] / fuelBeats.length)
+            fuelAvg.push(fuelRhythm[k] / fuelBeatsLength)
         }
 
-        treeAvg.push(treeBeats.length)
-        fuelAvg.push(fuelBeats.length)
+        treeAvg.push(treeBeatsLength)
+        fuelAvg.push(fuelBeatsLength)
         setTreeAvgRhythm(treeAvg)
         setFuelAvgRhythm(fuelAvg)
         setDisplayResults(true)
