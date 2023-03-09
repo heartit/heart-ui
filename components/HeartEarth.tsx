@@ -84,8 +84,18 @@ export default function HeartEarth() {
     })
 
     async function getBeatsFromData(_data) {
-        const treeBeats = await getTreeBeats()
-        const fuelBeats = await getFuelBeats()
+        const treeBeats: Array<{
+            data: string
+            addr: string
+            rhythm: number
+            goalRhythm: number
+        }> = await getTreeBeats()
+        const fuelBeats: Array<{
+            data: string
+            addr: string
+            rhythm: number
+            goalRhythm: number
+        }> = await getFuelBeats()
 
         let rhythm = [0, 0, 0, 0, 0, 0, 0, 0]
         for (let i = 0; i < treeBeats.length; i++) {
