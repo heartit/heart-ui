@@ -16,7 +16,12 @@ interface contractAddressesInterface {
 }
 
 export default function HeartEarth() {
-    const rewardeeBeats = []
+    const rewardeeBeats: Array<{
+        data: string
+        addr: string
+        rhythm: number
+        goalRhythm: number
+    }> = []
 
     const addresses: contractAddressesInterface = earthContractAddresses
     const { chainId: chainIdHex, isWeb3Enabled } = useMoralis()
@@ -93,10 +98,12 @@ export default function HeartEarth() {
                 rewardeeBeats.push({
                     data: treeBeats[i].data,
                     addr: treeBeats[i].addr,
-                    rhythm: treeBeats[i].rhythm.toString(),
-                    goalRhythm: "90000000",
+                    rhythm: parseInt(treeBeats[i].rhythm.toString()),
+                    goalRhythm: 90000000,
                 })
         }
+
+        console.log(rewardeeBeats)
 
         /*[
         {
@@ -106,7 +113,7 @@ export default function HeartEarth() {
             goalRhythm: 90000000,
         },
         ]*/
-        const treeAvg = []
+        const treeAvg: number = []
         for (let k = 0; k < rhythm.length; k++) {
             treeAvg.push(rhythm[k] / treeBeats.length)
         }
@@ -125,13 +132,13 @@ export default function HeartEarth() {
                 rewardeeBeats.push({
                     data: fuelBeats[i].data,
                     addr: fuelBeats[i].addr,
-                    rhythm: fuelBeats[i].rhythm.toString(),
-                    goalRhythm: "9000000",
+                    rhythm: parseInt(fuelBeats[i].rhythm.toString()),
+                    goalRhythm: 9000000,
                 })
         }
         console.log("rewardee beats", rewardeeBeats)
 
-        const fuelAvg = []
+        const fuelAvg: number = []
         for (let k = 0; k < fuelRhythm.length; k++) {
             fuelAvg.push(fuelRhythm[k] / fuelBeats.length)
         }
