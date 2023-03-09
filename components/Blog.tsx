@@ -124,6 +124,17 @@ export default function Blog() {
                             height={300}
                             className="mx-auto"
                         />
+                        <li className="pl-5">
+                            Secure the Heart smart contract
+                        </li>
+                        <p className="pl-5">
+                            Secure the contract against any kind of attack,
+                            especially the Sybil attack to prevent bots from
+                            populating the database with all possible outcomes.
+                            A token may also be announced to punish such actions
+                            by making the process inprofitable and punishing if
+                            they are not a human.
+                        </p>
                         <li className="italic">
                             Emotion detection using wearables and smartphones
                         </li>
