@@ -124,7 +124,7 @@ export default function Blog() {
                             height={300}
                             className="mx-auto"
                         />
-                        <li className="pl-5">
+                        <li className="italic">
                             Secure the Heart smart contract
                         </li>
                         <p className="pl-5">
@@ -135,7 +135,13 @@ export default function Blog() {
                             by making the process inprofitable and punishing if
                             they are not a human.
                         </p>
-                        <li className="italic">
+                        <p className="pl-5">
+                            The reputation of a wallet along with analysis of
+                            other HeartBeats will add to the security and
+                            quality of the outcome concerning various data of
+                            interest.
+                        </p>
+                        <li className="italic pt-2">
                             Emotion detection using wearables and smartphones
                         </li>
                         <p className="pl-5">
@@ -237,13 +243,28 @@ export default function Blog() {
                             relative data will be rewarded from the profit that
                             asset makes.
                         </p>
+                        <li className="italic pt-2">Social Network</li>
+                        <p className="pl-5">
+                            This will be a social network where the content is
+                            valued more than the user. The content will be
+                            sorted and valued by the HeartIt database.
+                        </p>
                     </ol>
-                    <li className="font-bold pt-3">User Interface (UI)</li>
+                    <li className="font-bold pt-3">
+                        User Experience (UX) and User Interface (UI)
+                    </li>
                     <ol className="list-decimal list-inside space-y-1 pl-5 mt-2">
                         <p className="pt-2">
                             The UI will keep its simplicity and neon colors.
                             &#9786; The following are the main focus of what is
                             coming up in UI and UX.
+                        </p>
+                        <li className="italic pt-2">Targeted Data</li>
+                        <p className="pl-5">
+                            Based on various applications mentioned above, we
+                            will have different categories where certain data
+                            (initially words) will be provided for the users to
+                            Heart so that they can make more profit later on.
                         </p>
                         <li className="italic pt-2">
                             Responsive to different screen sizes
