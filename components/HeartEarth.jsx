@@ -11,14 +11,15 @@ import { useEffect, useState } from "react"
 import Image from "next/image"
 import styles from "../styles/Home.module.css"
 
-
 export default function HeartEarth() {
-    const rewardeeBeats= []
+    const rewardeeBeats = []
 
     const { chainId: chainIdHex, isWeb3Enabled } = useMoralis()
     const chainId = parseInt(chainIdHex)
     const heartEarthAddress =
-        chainId in earthContractAddresses ? earthContractAddresses[chainId][0] : null
+        chainId in earthContractAddresses
+            ? earthContractAddresses[chainId][0]
+            : null
     const heartAddress =
         chainId in contractAddresses ? contractAddresses[chainId][0] : null
 
@@ -35,6 +36,7 @@ export default function HeartEarth() {
     const [leaveItDisplayResults, setLeaveItDisplayResults] = useState(false)
     const [weatherCondition, setWeatherCondition] = useState("normal")
     const [rewardeeAmntInput, setRewardeeAmntInput] = useState("0")
+    const [rewardBeats, setRewardBeats] = useState([])
 
     const { runContractFunction: treeLeaveIt } = useWeb3Contract({
         abi: earthAbi,
@@ -68,7 +70,7 @@ export default function HeartEarth() {
         abi: abi,
         contractAddress: heartAddress,
         functionName: "reward",
-        params: { _beats: rewardeeBeats },
+        params: { _beats: rewardBeats },
         msgValue: ethers.utils.parseUnits(rewardeeAmntInput).toString(),
     })
 
@@ -76,15 +78,12 @@ export default function HeartEarth() {
         const treeBeats = await getTreeBeats()
         const fuelBeats = await getFuelBeats()
 
-        const treeBeatsLength = Object.values(treeBeats).length
-        const fuelBeatsLength = Object.values(fuelBeats).length
-
         let rhythm = [0, 0, 0, 0, 0, 0, 0, 0]
 
         console.log("type of treebeats", typeof treeBeats)
 
         if (typeof treeBeats == "object" && treeBeats != null) {
-            for (let i = 0; i < treeBeatsLength; i++) {
+            for (let i = 0; i < treeBeats.length; i++) {
                 let iter = 0
                 const initIndex = 8 - treeBeats[i].rhythm.toString().length
                 for (let j = initIndex; j < rhythm.length; j++) {
@@ -104,12 +103,12 @@ export default function HeartEarth() {
 
         const treeAvg = []
         for (let k = 0; k < rhythm.length; k++) {
-            treeAvg.push(rhythm[k] / treeBeatsLength)
+            treeAvg.push(rhythm[k] / treeBeats.length)
         }
 
         let fuelRhythm = [0, 0, 0, 0, 0, 0, 0, 0]
         if (typeof fuelBeats == "object" && fuelBeats != null) {
-            for (let i = 0; i < fuelBeatsLength; i++) {
+            for (let i = 0; i < fuelBeats.length; i++) {
                 let iter = 0
                 const initIndex = 8 - fuelBeats[i].rhythm.toString().length
                 for (let j = initIndex; j < fuelRhythm.length; j++) {
@@ -127,17 +126,18 @@ export default function HeartEarth() {
                     })
             }
         }
-        console.log("rewardee beats", rewardeeBeats)
 
         const fuelAvg = []
         for (let k = 0; k < fuelRhythm.length; k++) {
-            fuelAvg.push(fuelRhythm[k] / fuelBeatsLength)
+            fuelAvg.push(fuelRhythm[k] / fuelBeats.length)
         }
 
-        treeAvg.push(treeBeatsLength)
-        fuelAvg.push(fuelBeatsLength)
+        treeAvg.push(treeBeats.length)
+        fuelAvg.push(fuelBeats.length)
         setTreeAvgRhythm(treeAvg)
         setFuelAvgRhythm(fuelAvg)
+        console.log("rewardee beats", rewardeeBeats)
+        setRewardBeats(rewardeeBeats)
         setDisplayResults(true)
     }
 
