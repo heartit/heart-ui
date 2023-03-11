@@ -1,7 +1,14 @@
 import Link from "next/link"
 import Image from "next/image"
+import ReactPlayer from "react-player/youtube"
+import { useState, useEffect } from "react"
 
 export default function Blog() {
+    const [hasWindow, setHasWindow] = useState(false)
+    useEffect(() => {
+        typeof window !== "undefined" && setHasWindow(true)
+    }, [])
+
     return (
         <div className="flex flex-col items-center space-y-4 pb-10">
             <div className="bg-[#00FFD1] text-[#0F4C75] rounded-md p-5 m-5 w-1/2">
@@ -99,6 +106,11 @@ export default function Blog() {
                         reward those who have hearted the word "tree" as Good
                         (9/9) or the word "fuel" as Bad (9/9).
                     </p>
+                    <div className="pt-5 flex place-content-center">
+                        {hasWindow && (
+                            <ReactPlayer url="https://www.youtube.com/watch?v=w0gm83aPCp4" />
+                        )}
+                    </div>
                 </div>
                 <div className="pt-5 text-xl font-bold">HeartIt Plans</div>
                 <p className="pt-2">HeartIt will improve thusly:</p>
