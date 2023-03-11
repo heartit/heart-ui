@@ -11,29 +11,18 @@ import { useEffect, useState } from "react"
 import Image from "next/image"
 import styles from "../styles/Home.module.css"
 
-interface contractAddressesInterface {
-    [key: string]: string[]
-}
 
 export default function HeartEarth() {
-    const rewardeeBeats: Array<{
-        data: string
-        addr: string
-        rhythm: number
-        goalRhythm: number
-    }> = []
+    const rewardeeBeats= []
 
-    const addresses: contractAddressesInterface = earthContractAddresses
     const { chainId: chainIdHex, isWeb3Enabled } = useMoralis()
-    const chainId: string = parseInt(chainIdHex!).toString()
+    const chainId = parseInt(chainIdHex)
     const heartEarthAddress =
-        chainId in addresses ? addresses[chainId][0] : null
-
-    const heartAddresses: contractAddressesInterface = contractAddresses
+        chainId in earthContractAddresses ? earthContractAddresses[chainId][0] : null
     const heartAddress =
-        chainId in heartAddresses ? heartAddresses[chainId][0] : null
+        chainId in contractAddresses ? contractAddresses[chainId][0] : null
 
-    const [treeLeaveItStatus, setTreeLeaveItStatus] = useState<boolean>(false)
+    const [treeLeaveItStatus, setTreeLeaveItStatus] = useState(false)
     const [fuelLeaveItStatus, setFuelLeaveItStatus] = useState(false)
     const [getBeatsData, setGetBeatsData] = useState("")
     const [treeAvgRhythm, setTreeAvgRhythm] = useState([
@@ -49,35 +38,35 @@ export default function HeartEarth() {
 
     const { runContractFunction: treeLeaveIt } = useWeb3Contract({
         abi: earthAbi,
-        contractAddress: heartEarthAddress!,
+        contractAddress: heartEarthAddress,
         functionName: "leaveIt",
         params: { _data: "tree" },
     })
 
     const { runContractFunction: fuelLeaveIt } = useWeb3Contract({
         abi: earthAbi,
-        contractAddress: heartEarthAddress!,
+        contractAddress: heartEarthAddress,
         functionName: "leaveIt",
         params: { _data: "fuel" },
     })
 
     const { runContractFunction: getTreeBeats } = useWeb3Contract({
         abi: abi,
-        contractAddress: heartAddress!,
+        contractAddress: heartAddress,
         functionName: "getBeats",
         params: { _data: "tree" },
     })
 
     const { runContractFunction: getFuelBeats } = useWeb3Contract({
         abi: abi,
-        contractAddress: heartAddress!,
+        contractAddress: heartAddress,
         functionName: "getBeats",
         params: { _data: "fuel" },
     })
 
     const { runContractFunction: reward } = useWeb3Contract({
         abi: abi,
-        contractAddress: heartAddress!,
+        contractAddress: heartAddress,
         functionName: "reward",
         params: { _beats: rewardeeBeats },
         msgValue: ethers.utils.parseUnits(rewardeeAmntInput).toString(),

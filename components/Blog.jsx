@@ -1,10 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
 
-interface contractAddressesInterface {
-    [key: string]: string[]
-}
-
 export default function Blog() {
     return (
         <div className="flex flex-col items-center space-y-4 pb-10">

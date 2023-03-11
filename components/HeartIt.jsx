@@ -4,15 +4,14 @@ import { useNotification } from "web3uikit"
 import { BigNumber, ethers, ContractTransaction } from "ethers"
 import { useEffect, useState } from "react"
 
-interface contractAddressesInterface {
+/*interface contractAddressesInterface {
     [key: string]: string[]
-}
+}*/
 
 export default function HeartIt() {
-    const addresses: contractAddressesInterface = contractAddresses
     const { chainId: chainIdHex, isWeb3Enabled } = useMoralis()
-    const chainId: string = parseInt(chainIdHex!).toString()
-    const heartAddress = chainId in addresses ? addresses[chainId][0] : null
+    const chainId= parseInt(chainIdHex)
+    const heartAddress = chainId in contractAddresses?contractAddresses[chainId][0] : null
     const [beats, setBeats] = useState([])
     const [allBeats, setAllBeats] = useState([])
     const [dataInput, setDataInput] = useState("")
@@ -23,37 +22,34 @@ export default function HeartIt() {
 
     const { runContractFunction: addBeat } = useWeb3Contract({
         abi: abi,
-        contractAddress: heartAddress!,
+        contractAddress: heartAddress,
         functionName: "addBeat",
         params: { _data: dataInput, _rhythm: parseInt(rhythmInput) },
     })
 
     const { runContractFunction: getBeats } = useWeb3Contract({
         abi: abi,
-        contractAddress: heartAddress!,
+        contractAddress: heartAddress,
         functionName: "getBeats",
         params: { _data: getBeatsData },
     })
 
     const { runContractFunction: getAllBeats } = useWeb3Contract({
         abi: abi,
-        contractAddress: heartAddress!,
+        contractAddress: heartAddress,
         functionName: "getAllBeats",
         params: {},
     })
 
     async function updateUI() {
         console.log("[W8] Updating UI...")
-        //const beatsFromCall = await getBeats()
         const allBeatsCalled = await getAllBeats()
-        //console.log(allBeatsCalled)
         setAllBeats(allBeatsCalled)
     }
 
-    const handleSuccess = async function (tx: ContractTransaction) {
+    const handleSuccess = async function (tx) {
         await tx.wait(1)
         console.log("TX", tx)
-        //handleNewNotification()
         updateUI()
     }
 
@@ -505,7 +501,7 @@ export default function HeartIt() {
                         onClick={async () => {
                             await addBeat({
                                 onSuccess: (tx) =>
-                                    handleSuccess(tx as ContractTransaction),
+                                    handleSuccess(tx),
                             })
                         }}
                     >
