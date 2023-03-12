@@ -4,10 +4,6 @@ import { useNotification } from "web3uikit"
 import { BigNumber, ethers, ContractTransaction } from "ethers"
 import { useEffect, useState } from "react"
 
-/*interface contractAddressesInterface {
-    [key: string]: string[]
-}*/
-
 export default function HeartIt() {
     const { chainId: chainIdHex, isWeb3Enabled } = useMoralis()
     const chainId = parseInt(chainIdHex)
@@ -94,6 +90,18 @@ export default function HeartIt() {
                     <div className="col-span-2 text-xl font-bold text-white">
                         Heart It
                     </div>
+                    <p className="col-span-2">
+                        &#9888; HeartIt is currently on G&#246;rli Test Network;
+                        get free G&#246;rli ETH from the{" "}
+                        <a
+                            href="https://goerlifaucet.com/"
+                            className="underline"
+                            target="_blank"
+                        >
+                            faucet
+                        </a>{" "}
+                        to test HeartIt.
+                    </p>
                     <input
                         type="text"
                         id="data-input"

@@ -23,3 +23,4 @@ A website for **HeartIt** project where we are creating a Heart full of emotions
 - [x] add responsive screen-size styling to all components <sup>*(completed on March 12, 2023)*</sup>
 - [ ] cute emotion selector
 - [ ] cute and more detailed results in **Heart Search** and **Heart History** sections
+- [ ] move to a real domain

@@ -251,6 +251,17 @@ export default function HeartEarth() {
                         positively in Heart contract, hearting "tree" as{" "}
                         <b>Good</b> or "fuel" as <b>Bad</b>:
                     </p>
+                    <p>
+                        Get G&#246;rli ETH from the{" "}
+                        <a
+                            href="https://goerlifaucet.com/"
+                            className="underline"
+                            target="_blank"
+                        >
+                            faucet
+                        </a>{" "}
+                        for testing!
+                    </p>
 
                     <input
                         type="text"
