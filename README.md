@@ -1,6 +1,6 @@
 # Heart-UI
 
-A website for HeartIt project where we are creating a Heart full of emotions for the web.
+A website for **HeartIt** project where we are creating a Heart full of emotions for the web.
 
 ## Links
 
@@ -8,9 +8,9 @@ A website for HeartIt project where we are creating a Heart full of emotions for
 
 [HeartIt Blog](https://heartit.netlify.app/blog)
 
-[Demo Video Link](https://www.youtube.com/watch?v=w0gm83aPCp4)
+[Demo Video](https://www.youtube.com/watch?v=w0gm83aPCp4)
 
-## Track List for Heart-UI
+## Track List
 
 - [x] add contract address and ABI for [Heart](https://github.com/heartit/heart) as constants <sup>*(completed on March 2, 2023)*</sup>
 - [x] add `Header.jsx` component for site's header <sup>*(completed on March 2, 2023)*</sup>
