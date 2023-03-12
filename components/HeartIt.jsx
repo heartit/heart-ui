@@ -10,8 +10,9 @@ import { useEffect, useState } from "react"
 
 export default function HeartIt() {
     const { chainId: chainIdHex, isWeb3Enabled } = useMoralis()
-    const chainId= parseInt(chainIdHex)
-    const heartAddress = chainId in contractAddresses?contractAddresses[chainId][0] : null
+    const chainId = parseInt(chainIdHex)
+    const heartAddress =
+        chainId in contractAddresses ? contractAddresses[chainId][0] : null
     const [beats, setBeats] = useState([])
     const [allBeats, setAllBeats] = useState([])
     const [dataInput, setDataInput] = useState("")
@@ -87,9 +88,9 @@ export default function HeartIt() {
     }
 
     return (
-        <div className="flex flex-row items-center justify-evenly text-gray-700">
+        <div className="flex flex-col md:flex-row items-center justify-evenly text-gray-700">
             {heartAddress ? (
-                <div className="bg-[#31C6D4] grid grid-cols-2 gap-4 rounded-md p-5 m-5">
+                <div className="bg-[#31C6D4] flex flex-col items-center md:grid md:grid-cols-2 gap-4 rounded-md p-3 mb-10 w-5/6 md:w-auto md:p-5 mb-10 w-5/6 md:w-auto md:m-5">
                     <div className="col-span-2 text-xl font-bold text-white">
                         Heart It
                     </div>
@@ -497,11 +498,10 @@ export default function HeartIt() {
                     </div>
                     <button
                         type="button"
-                        className="bg-[#FF1E1E] text-white font-bold rounded-md px-4 py-2 m-2 mx-40 transition duration-500 ease select-none hover:bg-red-800 hover:outline-none focus:outline-none focus:shadow-outline col-span-2"
+                        className="bg-[#FF1E1E] text-white font-bold rounded-md px-4 py-2 m-2 md:mx-40 transition duration-500 ease select-none hover:bg-red-800 hover:outline-none focus:outline-none focus:shadow-outline col-span-2"
                         onClick={async () => {
                             await addBeat({
-                                onSuccess: (tx) =>
-                                    handleSuccess(tx),
+                                onSuccess: (tx) => handleSuccess(tx),
                             })
                         }}
                     >
@@ -511,8 +511,8 @@ export default function HeartIt() {
             ) : (
                 <div>HeartAddress not found!</div>
             )}
-            <div className="flex flex-col">
-                <div className="bg-[#B4E4FF] rounded-md p-5 m-5">
+            <div className="flex flex-col items-center">
+                <div className="bg-[#B4E4FF] rounded-md p-5 mb-10  w-5/6 md:w-auto md:m-5">
                     <div className="font-semibold">Search the Heart!</div>
                     <div className="grid grid-cols-3 gap-4 items-center">
                         <input
@@ -550,8 +550,8 @@ export default function HeartIt() {
                         </div>
                     )}
                 </div>
-                <div className="bg-[#B4E4FF] rounded-md p-5 m-5 content-center">
-                    <div className="font-semibold">Heart History</div>
+                <div className="bg-[#B4E4FF] rounded-md p-5 mb-10  w-5/6 md:w-auto md:m-5 content-center">
+                    <div className="font-semibold mb-4">Heart History</div>
                     <div className="overflow-y-scroll h-80  rounded-md bg-[#00FFD1]">
                         <table className="p-1 rounded-md border-separate border-spacing-2 ">
                             <thead>
