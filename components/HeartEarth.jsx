@@ -164,8 +164,8 @@ export default function HeartEarth() {
     }, [isWeb3Enabled])
 
     return (
-        <div className="grid grid-cols-2 items-center justify-evenly text-gray-700">
-            <div className="flex flex-col bg-[#31C6D4] rounded-md p-5 m-5 place-items-center space-y-3">
+        <div className="flex flex-col md:grid grid-cols-2 items-center justify-evenly text-gray-700">
+            <div className="flex flex-col bg-[#31C6D4] rounded-md w-5/6 md:w-auto p-3 md:p-5 mb-10 md:m-5 place-items-center space-y-3">
                 <div className="text-xl font-bold text-white self-start">
                     HeartEarth
                 </div>
@@ -271,12 +271,12 @@ export default function HeartEarth() {
                     </button>
                 </div>
             </div>
-            <div className="bg-[#B4E4FF] rounded-md p-5 m-5">
+            <div className="bg-[#B4E4FF] rounded-md w-5/6 md:w-auto p-3 md:p-5 m-5">
                 <div className="font-bold">
                     A showcase sample of HeartIt application
                 </div>
                 {weatherCondition == "normal" && (
-                    <div className="flex flex-col place-items-center bg-gray-500 rounded-md p-5 m-5 text-5xl">
+                    <div className="flex flex-col place-items-center bg-gray-500 rounded-md p-5 m-5 text-xl md:text-5xl">
                         <div>🌫️🌫️🌫️🌫️🌫️🌫️🌥🌫️🌫️</div>
                         <div>🌫️🌫️🌫️🌫️🌫️🌫️🌫️🌫️🌫️</div>
                         <div>🌫️🌫️🌫️🌫️🌫️🌫️🌫️🌫️🌫️</div>
@@ -284,7 +284,7 @@ export default function HeartEarth() {
                     </div>
                 )}
                 {weatherCondition == "clear" && (
-                    <div className="flex flex-col place-items-center bg-blue-400 rounded-md p-5 m-5 text-5xl">
+                    <div className="flex flex-col place-items-center bg-blue-400 rounded-md p-5 m-5 text-xl md:text-5xl">
                         <div>
                             ☁️<span className="invisible">🌫️🌫️🌫️🌫️</span>☁️🌞
                             <span className="invisible">🌫️</span>☁️
@@ -306,7 +306,7 @@ export default function HeartEarth() {
                     </div>
                 )}
                 {weatherCondition == "polluted" && (
-                    <div className="flex flex-col place-items-center bg-gray-700 rounded-md p-5 m-5 text-5xl">
+                    <div className="flex flex-col place-items-center bg-gray-700 rounded-md p-5 m-5 text-xl md:text-5xl">
                         <div>🌫️🌫️🌫️🌫️🌫️🌫️🌫️🌫️🌫️</div>
                         <div>🌫️🌫️🌫️🌫️🌫️🌫️🌫️🌫️🌫️</div>
                         <div>🌫️🌫️🌫️🌫️🌫️🌫️🌫️🌫️🌫️</div>
@@ -314,7 +314,7 @@ export default function HeartEarth() {
                     </div>
                 )}
 
-                <p>
+                <p className="pt-2">
                     HeartEarth smart contract is a simple example to showcase
                     how the HeartIt smart contract can be utilized to move any
                     subject towards a good and harmonious version of itself,
@@ -322,17 +322,17 @@ export default function HeartEarth() {
                     their feelings regarding various pieces of related
                     information.
                 </p>
-                <p>
+                <p className="pt-2">
                     In this example, the HeartEarth project will get Heartbeats
                     about the words "tree" and "fuel" from the HeartIt and will
                     check the rhythms on each:
                 </p>
-                <p>
+                <p className="pt-2">
                     1. If they are mostly "Good" with rhythm 90000000, the
                     HeartEarth agent will leave them be by the "leaveIt"
                     function programmed inside the contract.
                 </p>
-                <p>
+                <p className="pt-2">
                     2. If they are mostly "Bad" with rhythm 9000000, the
                     HeartEarth agent will remove them, since it will get a
                     "false" response from the "leaveIt" function.
