@@ -83,6 +83,41 @@ export default function HeartIt() {
         )
     }
 
+    const numbersOfEmo = (
+        <ul className="flex justify-between w-full px-[10px]">
+            <li className="flex justify-center relative">
+                <span className="absolute">0</span>
+            </li>
+            <li className="flex justify-center relative">
+                <span className="absolute">1</span>
+            </li>
+            <li className="flex justify-center relative">
+                <span className="absolute">2</span>
+            </li>
+            <li className="flex justify-center relative">
+                <span className="absolute">3</span>
+            </li>
+            <li className="flex justify-center relative">
+                <span className="absolute">4</span>
+            </li>
+            <li className="flex justify-center relative">
+                <span className="absolute">5</span>
+            </li>
+            <li className="flex justify-center relative">
+                <span className="absolute">6</span>
+            </li>
+            <li className="flex justify-center relative">
+                <span className="absolute">7</span>
+            </li>
+            <li className="flex justify-center relative">
+                <span className="absolute">8</span>
+            </li>
+            <li className="flex justify-center relative">
+                <span className="absolute">9</span>
+            </li>
+        </ul>
+    )
+
     return (
         <div className="flex flex-col lg:flex-row items-center justify-evenly text-gray-700">
             {heartAddress ? (
@@ -126,38 +161,7 @@ export default function HeartIt() {
                                 )
                             }}
                         />
-                        <ul className="flex justify-between w-full px-[10px]">
-                            <li className="flex justify-center relative">
-                                <span className="absolute">0</span>
-                            </li>
-                            <li className="flex justify-center relative">
-                                <span className="absolute">1</span>
-                            </li>
-                            <li className="flex justify-center relative">
-                                <span className="absolute">2</span>
-                            </li>
-                            <li className="flex justify-center relative">
-                                <span className="absolute">3</span>
-                            </li>
-                            <li className="flex justify-center relative">
-                                <span className="absolute">4</span>
-                            </li>
-                            <li className="flex justify-center relative">
-                                <span className="absolute">5</span>
-                            </li>
-                            <li className="flex justify-center relative">
-                                <span className="absolute">6</span>
-                            </li>
-                            <li className="flex justify-center relative">
-                                <span className="absolute">7</span>
-                            </li>
-                            <li className="flex justify-center relative">
-                                <span className="absolute">8</span>
-                            </li>
-                            <li className="flex justify-center relative">
-                                <span className="absolute">9</span>
-                            </li>
-                        </ul>
+                        {numbersOfEmo}
                     </div>
                     <div className="flex flex-col space-y-2 p-7 w-80 bg-[#00FFD1] rounded-md">
                         <div className="self-center font-semibold">Bad</div>
@@ -175,38 +179,7 @@ export default function HeartIt() {
                                 )
                             }}
                         />
-                        <ul className="flex justify-between w-full px-[10px]">
-                            <li className="flex justify-center relative">
-                                <span className="absolute">0</span>
-                            </li>
-                            <li className="flex justify-center relative">
-                                <span className="absolute">1</span>
-                            </li>
-                            <li className="flex justify-center relative">
-                                <span className="absolute">2</span>
-                            </li>
-                            <li className="flex justify-center relative">
-                                <span className="absolute">3</span>
-                            </li>
-                            <li className="flex justify-center relative">
-                                <span className="absolute">4</span>
-                            </li>
-                            <li className="flex justify-center relative">
-                                <span className="absolute">5</span>
-                            </li>
-                            <li className="flex justify-center relative">
-                                <span className="absolute">6</span>
-                            </li>
-                            <li className="flex justify-center relative">
-                                <span className="absolute">7</span>
-                            </li>
-                            <li className="flex justify-center relative">
-                                <span className="absolute">8</span>
-                            </li>
-                            <li className="flex justify-center relative">
-                                <span className="absolute">9</span>
-                            </li>
-                        </ul>
+                        {numbersOfEmo}
                     </div>
                     <div className="flex flex-col space-y-2 p-7 w-80 bg-[#00FFD1] rounded-md">
                         <div className="self-center font-semibold">Happy</div>
@@ -224,38 +197,7 @@ export default function HeartIt() {
                                 )
                             }}
                         />
-                        <ul className="flex justify-between w-full px-[10px]">
-                            <li className="flex justify-center relative">
-                                <span className="absolute">0</span>
-                            </li>
-                            <li className="flex justify-center relative">
-                                <span className="absolute">1</span>
-                            </li>
-                            <li className="flex justify-center relative">
-                                <span className="absolute">2</span>
-                            </li>
-                            <li className="flex justify-center relative">
-                                <span className="absolute">3</span>
-                            </li>
-                            <li className="flex justify-center relative">
-                                <span className="absolute">4</span>
-                            </li>
-                            <li className="flex justify-center relative">
-                                <span className="absolute">5</span>
-                            </li>
-                            <li className="flex justify-center relative">
-                                <span className="absolute">6</span>
-                            </li>
-                            <li className="flex justify-center relative">
-                                <span className="absolute">7</span>
-                            </li>
-                            <li className="flex justify-center relative">
-                                <span className="absolute">8</span>
-                            </li>
-                            <li className="flex justify-center relative">
-                                <span className="absolute">9</span>
-                            </li>
-                        </ul>
+                        {numbersOfEmo}
                     </div>
                     <div className="flex flex-col space-y-2 p-7 w-80 bg-[#00FFD1] rounded-md">
                         <div className="self-center font-semibold">Sad</div>
@@ -273,38 +215,7 @@ export default function HeartIt() {
                                 )
                             }}
                         />
-                        <ul className="flex justify-between w-full px-[10px]">
-                            <li className="flex justify-center relative">
-                                <span className="absolute">0</span>
-                            </li>
-                            <li className="flex justify-center relative">
-                                <span className="absolute">1</span>
-                            </li>
-                            <li className="flex justify-center relative">
-                                <span className="absolute">2</span>
-                            </li>
-                            <li className="flex justify-center relative">
-                                <span className="absolute">3</span>
-                            </li>
-                            <li className="flex justify-center relative">
-                                <span className="absolute">4</span>
-                            </li>
-                            <li className="flex justify-center relative">
-                                <span className="absolute">5</span>
-                            </li>
-                            <li className="flex justify-center relative">
-                                <span className="absolute">6</span>
-                            </li>
-                            <li className="flex justify-center relative">
-                                <span className="absolute">7</span>
-                            </li>
-                            <li className="flex justify-center relative">
-                                <span className="absolute">8</span>
-                            </li>
-                            <li className="flex justify-center relative">
-                                <span className="absolute">9</span>
-                            </li>
-                        </ul>
+                        {numbersOfEmo}
                     </div>
                     <div className="flex flex-col space-y-2 p-7 w-80 bg-[#00FFD1] rounded-md">
                         <div className="self-center font-semibold">
@@ -324,38 +235,7 @@ export default function HeartIt() {
                                 )
                             }}
                         />
-                        <ul className="flex justify-between w-full px-[10px]">
-                            <li className="flex justify-center relative">
-                                <span className="absolute">0</span>
-                            </li>
-                            <li className="flex justify-center relative">
-                                <span className="absolute">1</span>
-                            </li>
-                            <li className="flex justify-center relative">
-                                <span className="absolute">2</span>
-                            </li>
-                            <li className="flex justify-center relative">
-                                <span className="absolute">3</span>
-                            </li>
-                            <li className="flex justify-center relative">
-                                <span className="absolute">4</span>
-                            </li>
-                            <li className="flex justify-center relative">
-                                <span className="absolute">5</span>
-                            </li>
-                            <li className="flex justify-center relative">
-                                <span className="absolute">6</span>
-                            </li>
-                            <li className="flex justify-center relative">
-                                <span className="absolute">7</span>
-                            </li>
-                            <li className="flex justify-center relative">
-                                <span className="absolute">8</span>
-                            </li>
-                            <li className="flex justify-center relative">
-                                <span className="absolute">9</span>
-                            </li>
-                        </ul>
+                        {numbersOfEmo}
                     </div>
                     <div className="flex flex-col space-y-2 p-7 w-80 bg-[#00FFD1] rounded-md">
                         <div className="self-center font-semibold">Fear</div>
@@ -373,38 +253,7 @@ export default function HeartIt() {
                                 )
                             }}
                         />
-                        <ul className="flex justify-between w-full px-[10px]">
-                            <li className="flex justify-center relative">
-                                <span className="absolute">0</span>
-                            </li>
-                            <li className="flex justify-center relative">
-                                <span className="absolute">1</span>
-                            </li>
-                            <li className="flex justify-center relative">
-                                <span className="absolute">2</span>
-                            </li>
-                            <li className="flex justify-center relative">
-                                <span className="absolute">3</span>
-                            </li>
-                            <li className="flex justify-center relative">
-                                <span className="absolute">4</span>
-                            </li>
-                            <li className="flex justify-center relative">
-                                <span className="absolute">5</span>
-                            </li>
-                            <li className="flex justify-center relative">
-                                <span className="absolute">6</span>
-                            </li>
-                            <li className="flex justify-center relative">
-                                <span className="absolute">7</span>
-                            </li>
-                            <li className="flex justify-center relative">
-                                <span className="absolute">8</span>
-                            </li>
-                            <li className="flex justify-center relative">
-                                <span className="absolute">9</span>
-                            </li>
-                        </ul>
+                        {numbersOfEmo}
                     </div>
                     <div className="flex flex-col space-y-2 p-7 w-80 bg-[#00FFD1] rounded-md">
                         <div className="self-center font-semibold">Anger</div>
@@ -422,38 +271,7 @@ export default function HeartIt() {
                                 )
                             }}
                         />
-                        <ul className="flex justify-between w-full px-[10px]">
-                            <li className="flex justify-center relative">
-                                <span className="absolute">0</span>
-                            </li>
-                            <li className="flex justify-center relative">
-                                <span className="absolute">1</span>
-                            </li>
-                            <li className="flex justify-center relative">
-                                <span className="absolute">2</span>
-                            </li>
-                            <li className="flex justify-center relative">
-                                <span className="absolute">3</span>
-                            </li>
-                            <li className="flex justify-center relative">
-                                <span className="absolute">4</span>
-                            </li>
-                            <li className="flex justify-center relative">
-                                <span className="absolute">5</span>
-                            </li>
-                            <li className="flex justify-center relative">
-                                <span className="absolute">6</span>
-                            </li>
-                            <li className="flex justify-center relative">
-                                <span className="absolute">7</span>
-                            </li>
-                            <li className="flex justify-center relative">
-                                <span className="absolute">8</span>
-                            </li>
-                            <li className="flex justify-center relative">
-                                <span className="absolute">9</span>
-                            </li>
-                        </ul>
+                        {numbersOfEmo}
                     </div>
                     <div className="flex flex-col space-y-2 p-7 w-80 bg-[#00FFD1] rounded-md">
                         <div className="self-center font-semibold">Disgust</div>
@@ -471,38 +289,7 @@ export default function HeartIt() {
                                 )
                             }}
                         />
-                        <ul className="flex justify-between w-full px-[10px]">
-                            <li className="flex justify-center relative">
-                                <span className="absolute">0</span>
-                            </li>
-                            <li className="flex justify-center relative">
-                                <span className="absolute">1</span>
-                            </li>
-                            <li className="flex justify-center relative">
-                                <span className="absolute">2</span>
-                            </li>
-                            <li className="flex justify-center relative">
-                                <span className="absolute">3</span>
-                            </li>
-                            <li className="flex justify-center relative">
-                                <span className="absolute">4</span>
-                            </li>
-                            <li className="flex justify-center relative">
-                                <span className="absolute">5</span>
-                            </li>
-                            <li className="flex justify-center relative">
-                                <span className="absolute">6</span>
-                            </li>
-                            <li className="flex justify-center relative">
-                                <span className="absolute">7</span>
-                            </li>
-                            <li className="flex justify-center relative">
-                                <span className="absolute">8</span>
-                            </li>
-                            <li className="flex justify-center relative">
-                                <span className="absolute">9</span>
-                            </li>
-                        </ul>
+                        {numbersOfEmo}
                     </div>
                     <button
                         type="button"
