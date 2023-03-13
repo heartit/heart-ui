@@ -84,7 +84,7 @@ export default function HeartIt() {
     }
 
     return (
-        <div className="flex flex-col md:flex-row items-center justify-evenly text-gray-700">
+        <div className="flex flex-col lg:flex-row items-center justify-evenly text-gray-700">
             {heartAddress ? (
                 <div className="bg-[#31C6D4] flex flex-col items-center md:grid md:grid-cols-2 gap-4 rounded-md p-3 mb-10 w-5/6 md:w-auto md:p-5 mb-10 w-5/6 md:w-auto md:m-5">
                     <div className="col-span-2 text-xl font-bold text-white">

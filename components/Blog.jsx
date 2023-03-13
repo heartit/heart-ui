@@ -11,7 +11,7 @@ export default function Blog() {
 
     return (
         <div className="flex flex-col items-center space-y-4 pb-10">
-            <div className="bg-[#00FFD1] text-[#0F4C75] rounded-md p-5 md:m-5 w-5/6 md:w-1/2">
+            <div className="bg-[#00FFD1] text-[#0F4C75] rounded-md p-5 md:m-5 w-5/6 lg:w-1/2">
                 <div className="bg-[#0000001c] rounded-md p-3">
                     <h1 className="text-2xl text-[#FF1E1E] font-bold">
                         An Intro to the HeartIt
@@ -291,7 +291,7 @@ export default function Blog() {
                     </ol>
                 </ul>
             </div>
-            <div className="bg-[#00FFD1] text-[#0F4C75] rounded-md p-5 m-5 w-5/6 md:w-1/2">
+            <div className="bg-[#00FFD1] text-[#0F4C75] rounded-md p-5 m-5 w-5/6 lg:w-1/2">
                 <div className="bg-[#0000001c] rounded-md p-3">
                     <h1 className="text-2xl text-[#FF1E1E] font-bold">
                         Tao Te Ching

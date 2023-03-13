@@ -164,7 +164,7 @@ export default function HeartEarth() {
     }, [isWeb3Enabled])
 
     return (
-        <div className="flex flex-col md:grid grid-cols-2 items-center justify-evenly text-gray-700">
+        <div className="flex flex-col lg:grid grid-cols-2 items-center justify-evenly text-gray-700">
             <div className="flex flex-col bg-[#31C6D4] rounded-md w-5/6 md:w-auto p-3 md:p-5 mb-10 md:m-5 place-items-center space-y-3">
                 <div className="text-xl font-bold text-white self-start">
                     HeartEarth
