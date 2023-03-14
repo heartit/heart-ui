@@ -357,20 +357,24 @@ export default function HeartIt() {
                                 </tr>
                             </thead>
                             <tbody className="">
-                                {allBeats.map((beat, index) => (
-                                    <tr key={index}>
-                                        <td>
-                                            {beat.data.length > 10
-                                                ? beat.data.slice(0, 10) + "..."
-                                                : beat.data}
-                                        </td>
-                                        <td>{beat.rhythm.toString()}</td>
-                                        <td>
-                                            {beat.addr.slice(0, 10)}...
-                                            {beat.addr.slice(28)}
-                                        </td>
-                                    </tr>
-                                ))}
+                                {allBeats
+                                    .slice(0)
+                                    .reverse()
+                                    .map((beat, index) => (
+                                        <tr key={index}>
+                                            <td>
+                                                {beat.data.length > 10
+                                                    ? beat.data.slice(0, 10) +
+                                                      "..."
+                                                    : beat.data}
+                                            </td>
+                                            <td>{beat.rhythm.toString()}</td>
+                                            <td>
+                                                {beat.addr.slice(0, 10)}...
+                                                {beat.addr.slice(28)}
+                                            </td>
+                                        </tr>
+                                    ))}
                             </tbody>
                         </table>
                     </div>
